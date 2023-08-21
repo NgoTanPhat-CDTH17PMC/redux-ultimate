@@ -64,3 +64,7 @@ dùng để nhận biết 1 fire của 1 cái event
 ## useSelector: mapStateToProps
 
 const result: any = useSelector (selector: function, equalityFn?: function)
+
+## Redux Thunk
+
+Tác dụng duy nhất là cung cấp cho bạn 1 keyword "Dispatch" để chạy 1 cái action
