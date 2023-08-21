@@ -4,6 +4,7 @@ import { increaseCounter, decreaseCounter } from "./action/actions";
 import { connect, useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { useEffect } from "react";
+import Home from "./components/Home";
 
 function App(props) {
   const dispatch = useDispatch();
@@ -25,7 +26,7 @@ function App(props) {
   }, []);
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Hello world with React and Hoi Dan IT!</h1>
         <div>Count: {newCount}</div>
@@ -35,7 +36,8 @@ function App(props) {
         <button onClick={() => dispatch(decreaseCounter())}>
           Decrease Count
         </button>
-      </header>
+      </header> */}
+      <Home />
     </div>
   );
 }
