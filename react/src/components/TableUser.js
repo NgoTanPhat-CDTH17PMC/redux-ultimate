@@ -53,15 +53,15 @@ const TableUser = (props) => {
         </thead>
         <tbody>
           {isError === true ? (
-            <>
-              <div>Something wrongs, please try again...</div>
-            </>
+            <tr>
+              <td colSpan={4}>Something wrongs, please try again...</td>
+            </tr>
           ) : (
             <>
               {isLoading === true ? (
-                <>
-                  <div>Loading data...</div>
-                </>
+                <tr>
+                  <td colSpan={4}>Loading data...</td>
+                </tr>
               ) : (
                 <>
                   {listUser &&

@@ -70,7 +70,7 @@ const handleCreateNewUserAPI = async (req, res) => {
       message: `A new User is created successfully!`,
       errCode: 0,
     });
-  }, 5000);
+  }, 3000);
 };
 
 module.exports = {
