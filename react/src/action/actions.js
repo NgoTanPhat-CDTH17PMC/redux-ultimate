@@ -7,6 +7,9 @@ import {
   CREATE_USER_REQUEST,
   CREATE_USER_SUCCESS,
   CREATE_USER_ERROR,
+  DELETE_USER_REQUEST,
+  DELETE_USER_SUCCESS,
+  DELETE_USER_ERROR,
 } from "./types";
 import axios from "axios";
 
@@ -90,5 +93,40 @@ const createUsersSuccess = () => {
 const createUsersError = () => {
   return {
     type: CREATE_USER_ERROR,
+  };
+};
+
+/* DELETE USER */
+
+export const deleteUserRedux = (id) => {
+  return async (dispatch, getState) => {
+    dispatch(deleteUsersRequest());
+    try {
+      let res = await axios.post(`http://localhost:8080/users/delete/${id}`);
+      if (res && res.data.errCode === 0) {
+        dispatch(deleteUsersSuccess());
+        dispatch(fetchAllUser());
+      }
+    } catch (e) {
+      dispatch(deleteUsersError());
+    }
+  };
+};
+
+const deleteUsersRequest = () => {
+  return {
+    type: DELETE_USER_REQUEST,
+  };
+};
+
+const deleteUsersSuccess = () => {
+  return {
+    type: DELETE_USER_SUCCESS,
+  };
+};
+
+const deleteUsersError = () => {
+  return {
+    type: DELETE_USER_ERROR,
   };
 };

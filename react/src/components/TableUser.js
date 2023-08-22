@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 // import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAllUser } from "../action/actions";
+import { deleteUserRedux, fetchAllUser } from "../action/actions";
 
 const TableUser = (props) => {
   //   const [listUser, setListUser] = useState([
@@ -35,8 +35,8 @@ const TableUser = (props) => {
     dispatch(fetchAllUser());
   }, []);
 
-  const handleDeleteUser = (user) => {
-    console.log(user);
+  const handleDeleteUser = (id) => {
+    dispatch(deleteUserRedux(id));
   };
 
   return (
@@ -75,7 +75,7 @@ const TableUser = (props) => {
                           <td>
                             <Button
                               variant="danger"
-                              onClick={(event) => handleDeleteUser(item)}
+                              onClick={(event) => handleDeleteUser(item.id)}
                             >
                               Delete
                             </Button>
