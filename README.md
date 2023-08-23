@@ -68,3 +68,7 @@ const result: any = useSelector (selector: function, equalityFn?: function)
 ## Redux Thunk
 
 Tác dụng duy nhất là cung cấp cho bạn 1 keyword "Dispatch" để chạy 1 cái action
+
+## Redux toolkit
+
+View (react) -> Actions (redux) -> State (redux) -> re-render
